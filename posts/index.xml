@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Not A Hipster</title>
-    <link>https://nothipster.net/posts/</link>
+    <link>www.nothipster.net/posts/</link>
     <description>Recent content in Posts on Not A Hipster</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 30 May 2020 10:52:02 -0400</lastBuildDate>
     
-	<atom:link href="https://nothipster.net/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="www.nothipster.net/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Fall 2019 - Spring 2020 Wilmington, DE</title>
-      <link>https://nothipster.net/posts/photos/wilmington2020/</link>
+      <link>www.nothipster.net/posts/photos/wilmington2020/</link>
       <pubDate>Sat, 30 May 2020 10:52:02 -0400</pubDate>
       
-      <guid>https://nothipster.net/posts/photos/wilmington2020/</guid>
+      <guid>www.nothipster.net/posts/photos/wilmington2020/</guid>
       <description>Hancock St - local garden decoration Helter Skelter Eyeballs Lovering/Hancock Hobbit Doorway </description>
     </item>
     
