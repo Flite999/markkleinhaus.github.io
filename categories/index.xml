@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Not A Hipster</title>
-    <link>http://nothipster.net/categories/</link>
+    <link>https://nothipster.net/categories/</link>
     <description>Recent content in Categories on Not A Hipster</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="http://nothipster.net/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nothipster.net/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
