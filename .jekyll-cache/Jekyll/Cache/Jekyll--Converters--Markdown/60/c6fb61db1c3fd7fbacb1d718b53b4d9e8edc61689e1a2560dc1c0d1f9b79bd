@@ -1,0 +1,24 @@
+I"Õ<p>There is a myriad of approaches to this out on the internet - hereâ€™s what worked for me.</p>
+
+<ol>
+  <li>Run <code class="language-plaintext highlighter-rouge">bundle info minima</code> in terminal.</li>
+  <li>Copy the <code class="language-plaintext highlighter-rouge">Path</code> value and open that directory.</li>
+  <li>Copy the <code class="language-plaintext highlighter-rouge">default.html</code> file under <code class="language-plaintext highlighter-rouge">_layouts</code> folder in that directory.</li>
+  <li>Create a <code class="language-plaintext highlighter-rouge">_layouts</code> directory in your Jekyll blog root.</li>
+  <li>Paste the <code class="language-plaintext highlighter-rouge">default.html</code> file in your new <code class="language-plaintext highlighter-rouge">_layouts</code> directory.</li>
+  <li>Paste this line right after the <code class="language-plaintext highlighter-rouge">&lt;html&gt;</code> opening line:
+<code class="language-plaintext highlighter-rouge">&lt;script type="text/javascript"
+ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"&gt;&lt;/script&gt;
+</code></li>
+  <li>Save.</li>
+  <li>Edit your <code class="language-plaintext highlighter-rouge">_config.yml</code> file, add this line to the <code class="language-plaintext highlighter-rouge"># Build settings</code> block: 
+<code class="language-plaintext highlighter-rouge">markdown: kramdown</code></li>
+  <li>Run <code class="language-plaintext highlighter-rouge">gem install kramdown</code> in your terminal.</li>
+  <li>Finally, in your post, add <code class="language-plaintext highlighter-rouge">usemathjax: true</code> to your post variables, and enclose mathematical/logic symbols and equations with <code class="language-plaintext highlighter-rouge">$$</code> on both sides.</li>
+  <li>Formatting resources:
+    <ul>
+      <li>http://davidagler.com/teaching/logic/handouts/supplemental_material/MarkdownForSymbolicLogic.html</li>
+    </ul>
+  </li>
+</ol>
+:ET

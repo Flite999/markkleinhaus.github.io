@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "Logic"
+date:   2021-05-19
+categories: mathematics
+usemathjax: true
+---
+
+Logical expressions evaluate to True (1) or False (0).
+
+Logical Operators:
+* Negation $$\neg$$
