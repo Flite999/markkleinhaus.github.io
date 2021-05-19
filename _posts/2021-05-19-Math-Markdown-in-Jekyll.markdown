@@ -14,7 +14,7 @@ There is a myriad of approaches to this out on the internet - here's what worked
 5. Paste the `default.html` file in your new `_layouts` directory.
 6. Paste this line right after the `<html>` opening line: 
 ```<script type="text/javascript"
-    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 ```
 7. Save.
 8. Edit your `_config.yml` file, add this line to the `# Build settings` block: 
