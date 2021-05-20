@@ -22,4 +22,6 @@ There is a myriad of approaches to this out on the internet - here's what worked
 9. Run `gem install kramdown` in your terminal.
 10. Finally, in your post, add `usemathjax: true` to your post variables, and enclose mathematical/logic symbols and equations with `$$` on both sides.
 11. Formatting resources:
-* http://davidagler.com/teaching/logic/handouts/supplemental_material/MarkdownForSymbolicLogic.html
+* [MarkdownForSymbolicLogic](http://davidagler.com/teaching/logic/handouts/supplemental_material/MarkdownForSymbolicLogic.html)
+* [Basic Markdown syntax](https://www.markdownguide.org/basic-syntax/)
+* [Mathematical markdown cheatsheet](https://gist.github.com/LKS90/252ac41bd4a173be35b0)

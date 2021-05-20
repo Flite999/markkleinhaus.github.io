@@ -8,5 +8,25 @@ usemathjax: true
 
 Logical expressions evaluate to True (1) or False (0).
 
-Logical Operators:
+#### Logical Operators
 * Negation $$\neg$$
+    * $$\neg$$A is the OPPOSITE value of A.
+* Conjunction $$\wedge$$
+    * A$$\wedge$$B is true if both A AND B are true.
+* Disjunction $$\vee$$
+    * A$$\vee$$B is true if A OR B OR both are true.
+* Implication $$\rightarrow$$
+    * A$$\rightarrow$$B is true if whenever A is true, B is true.
+    * for example, if A is true (1), and B is false (0), A$$\rightarrow$$B is false.
+* Equivalence $$\leftrightarrow$$
+    * A$$\leftrightarrow$$B is true if A AND B are BOTH true or BOTH false.
+
+#### Predicate
+An expression that is true or false depending on parameters. Usually denoted with a capital letters, ex: P(x)
+
+#### Quantifier
+Connects a logical expression to the elements of a set
+* $$\forall$$ for all
+* $$\exists$$ exists/there is
+* Ex: $$\forall$$x($$\exists$$y(y < x ))
+    * For each element x in the set, there is an element y in the set, such that y < x

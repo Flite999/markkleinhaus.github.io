@@ -1,8 +1,48 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-05-19T08:08:53-04:00</updated><id>/feed.xml</id><title type="html">TIL</title><subtitle>Today I Learned Blog</subtitle><entry><title type="html">Logic</title><link href="/mathematics/2021/05/19/Logic.html" rel="alternate" type="text/html" title="Logic" /><published>2021-05-19T00:00:00-04:00</published><updated>2021-05-19T00:00:00-04:00</updated><id>/mathematics/2021/05/19/Logic</id><content type="html" xml:base="/mathematics/2021/05/19/Logic.html">&lt;p&gt;Logical expressions evaluate to True (1) or False (0).&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-05-20T07:26:12-04:00</updated><id>/feed.xml</id><title type="html">TIL</title><subtitle>Today I Learned Blog</subtitle><entry><title type="html">Logic</title><link href="/mathematics/2021/05/19/Logic.html" rel="alternate" type="text/html" title="Logic" /><published>2021-05-19T00:00:00-04:00</published><updated>2021-05-19T00:00:00-04:00</updated><id>/mathematics/2021/05/19/Logic</id><content type="html" xml:base="/mathematics/2021/05/19/Logic.html">&lt;p&gt;Logical expressions evaluate to True (1) or False (0).&lt;/p&gt;
 
-&lt;p&gt;Logical Operators:&lt;/p&gt;
+&lt;h4 id=&quot;logical-operators&quot;&gt;Logical Operators&lt;/h4&gt;
 &lt;ul&gt;
-  &lt;li&gt;Negation \(\neg\)&lt;/li&gt;
+  &lt;li&gt;Negation \(\neg\)
+    &lt;ul&gt;
+      &lt;li&gt;\(\neg\)A is the OPPOSITE value of A.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Conjunction \(\wedge\)
+    &lt;ul&gt;
+      &lt;li&gt;A\(\wedge\)B is true if both A AND B are true.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Disjunction \(\vee\)
+    &lt;ul&gt;
+      &lt;li&gt;A\(\vee\)B is true if A OR B OR both are true.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Implication \(\rightarrow\)
+    &lt;ul&gt;
+      &lt;li&gt;A\(\rightarrow\)B is true if whenever A is true, B is true.&lt;/li&gt;
+      &lt;li&gt;for example, if A is true (1), and B is false (0), A\(\rightarrow\)B is false.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Equivalence \(\leftrightarrow\)
+    &lt;ul&gt;
+      &lt;li&gt;A\(\leftrightarrow\)B is true if A AND B are BOTH true or BOTH false.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;predicate&quot;&gt;Predicate&lt;/h4&gt;
+&lt;p&gt;An expression that is true or false depending on parameters. Usually denoted with a capital letters, ex: P(x)&lt;/p&gt;
+
+&lt;h4 id=&quot;quantifier&quot;&gt;Quantifier&lt;/h4&gt;
+&lt;p&gt;Connects a logical expression to the elements of a set&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;\(\forall\) for all&lt;/li&gt;
+  &lt;li&gt;\(\exists\) exists/there is&lt;/li&gt;
+  &lt;li&gt;Ex: \(\forall\)x(\(\exists\)y(y &amp;lt; x ))
+    &lt;ul&gt;
+      &lt;li&gt;For each element x in the set, there is an element y in the set, such that y &amp;lt; x&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;</content><author><name></name></author><category term="mathematics" /><summary type="html">Logical expressions evaluate to True (1) or False (0).</summary></entry><entry><title type="html">Using Math/Logic Symbols in Markdown for Jekyll</title><link href="/mathematics/2021/05/19/Math-Markdown-in-Jekyll.html" rel="alternate" type="text/html" title="Using Math/Logic Symbols in Markdown for Jekyll" /><published>2021-05-19T00:00:00-04:00</published><updated>2021-05-19T00:00:00-04:00</updated><id>/mathematics/2021/05/19/Math-Markdown-in-Jekyll</id><content type="html" xml:base="/mathematics/2021/05/19/Math-Markdown-in-Jekyll.html">&lt;p&gt;There is a myriad of approaches to this out on the internet - here’s what worked for me.&lt;/p&gt;
 
 &lt;ol&gt;
@@ -13,7 +53,7 @@
   &lt;li&gt;Paste the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;default.html&lt;/code&gt; file in your new &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_layouts&lt;/code&gt; directory.&lt;/li&gt;
   &lt;li&gt;Paste this line right after the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;html&amp;gt;&lt;/code&gt; opening line:
 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;script type=&quot;text/javascript&quot;
- src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&amp;gt;&amp;lt;/script&amp;gt;
+ src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&amp;gt;&amp;lt;/script&amp;gt;
 &lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;Save.&lt;/li&gt;
   &lt;li&gt;Edit your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file, add this line to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;# Build settings&lt;/code&gt; block: 
@@ -22,7 +62,9 @@
   &lt;li&gt;Finally, in your post, add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;usemathjax: true&lt;/code&gt; to your post variables, and enclose mathematical/logic symbols and equations with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$$&lt;/code&gt; on both sides.&lt;/li&gt;
   &lt;li&gt;Formatting resources:
     &lt;ul&gt;
-      &lt;li&gt;http://davidagler.com/teaching/logic/handouts/supplemental_material/MarkdownForSymbolicLogic.html&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://davidagler.com/teaching/logic/handouts/supplemental_material/MarkdownForSymbolicLogic.html&quot;&gt;MarkdownForSymbolicLogic&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.markdownguide.org/basic-syntax/&quot;&gt;Basic Markdown syntax&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://gist.github.com/LKS90/252ac41bd4a173be35b0&quot;&gt;Mathematical markdown cheatsheet&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ol&gt;</content><author><name></name></author><category term="mathematics" /><summary type="html">There is a myriad of approaches to this out on the internet - here’s what worked for me.</summary></entry></feed>

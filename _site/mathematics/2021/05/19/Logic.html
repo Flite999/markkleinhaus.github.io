@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<html lang=" en">
-<script type="text/javascript"
-    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><head>
+<html lang=" en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
@@ -51,9 +49,49 @@
   <div class="post-content e-content" itemprop="articleBody">
     <p>Logical expressions evaluate to True (1) or False (0).</p>
 
-<p>Logical Operators:</p>
+<h4 id="logical-operators">Logical Operators</h4>
 <ul>
-  <li>Negation \(\neg\)</li>
+  <li>Negation \(\neg\)
+    <ul>
+      <li>\(\neg\)A is the OPPOSITE value of A.</li>
+    </ul>
+  </li>
+  <li>Conjunction \(\wedge\)
+    <ul>
+      <li>A\(\wedge\)B is true if both A AND B are true.</li>
+    </ul>
+  </li>
+  <li>Disjunction \(\vee\)
+    <ul>
+      <li>A\(\vee\)B is true if A OR B OR both are true.</li>
+    </ul>
+  </li>
+  <li>Implication \(\rightarrow\)
+    <ul>
+      <li>A\(\rightarrow\)B is true if whenever A is true, B is true.</li>
+      <li>for example, if A is true (1), and B is false (0), A\(\rightarrow\)B is false.</li>
+    </ul>
+  </li>
+  <li>Equivalence \(\leftrightarrow\)
+    <ul>
+      <li>A\(\leftrightarrow\)B is true if A AND B are BOTH true or BOTH false.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="predicate">Predicate</h4>
+<p>An expression that is true or false depending on parameters. Usually denoted with a capital letters, ex: P(x)</p>
+
+<h4 id="quantifier">Quantifier</h4>
+<p>Connects a logical expression to the elements of a set</p>
+<ul>
+  <li>\(\forall\) for all</li>
+  <li>\(\exists\) exists/there is</li>
+  <li>Ex: \(\forall\)x(\(\exists\)y(y &lt; x ))
+    <ul>
+      <li>For each element x in the set, there is an element y in the set, such that y &lt; x</li>
+    </ul>
+  </li>
 </ul>
 
   </div><a class="u-url" href="/mathematics/2021/05/19/Logic.html" hidden></a>
@@ -84,6 +122,8 @@
   </div>
 
 </footer>
+<script type="text/javascript"
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>
