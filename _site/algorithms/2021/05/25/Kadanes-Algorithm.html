@@ -3,19 +3,21 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>TIL | Today I Learned Blog</title>
+<title>Kadane’s Algorithm | TIL</title>
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="TIL" />
+<meta property="og:title" content="Kadane’s Algorithm" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Today I Learned Blog" />
-<meta property="og:description" content="Today I Learned Blog" />
-<link rel="canonical" href="/" />
-<meta property="og:url" content="/" />
+<meta name="description" content="Determines the largest maximum contiguous subset of a set in O(n) time (brute force method is O(n^2) time)." />
+<meta property="og:description" content="Determines the largest maximum contiguous subset of a set in O(n) time (brute force method is O(n^2) time)." />
+<link rel="canonical" href="/algorithms/2021/05/25/Kadanes-Algorithm.html" />
+<meta property="og:url" content="/algorithms/2021/05/25/Kadanes-Algorithm.html" />
 <meta property="og:site_name" content="TIL" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-05-25T00:00:00-04:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="TIL" />
+<meta property="twitter:title" content="Kadane’s Algorithm" />
 <script type="application/ld+json">
-{"url":"/","name":"TIL","headline":"TIL","description":"Today I Learned Blog","@type":"WebSite","@context":"https://schema.org"}</script>
+{"mainEntityOfPage":{"@type":"WebPage","@id":"/algorithms/2021/05/25/Kadanes-Algorithm.html"},"url":"/algorithms/2021/05/25/Kadanes-Algorithm.html","headline":"Kadane’s Algorithm","description":"Determines the largest maximum contiguous subset of a set in O(n) time (brute force method is O(n^2) time).","dateModified":"2021-05-25T00:00:00-04:00","datePublished":"2021-05-25T00:00:00-04:00","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="TIL" /></head>
 <body><header class="site-header" role="banner">
@@ -35,26 +37,36 @@
 </header>
 <main class="page-content" aria-label="Content">
         <div class="wrapper">
-            <div class="home">
-<h2 class="post-list-heading">Posts</h2>
-    <ul class="post-list"><li><span class="post-meta">May 25, 2021</span>
-        <h3>
-          <a class="post-link" href="/algorithms/2021/05/25/Kadanes-Algorithm.html">
-            Kadane&#39;s Algorithm
-          </a>
-        </h3></li><li><span class="post-meta">May 19, 2021</span>
-        <h3>
-          <a class="post-link" href="/mathematics/2021/05/19/Math-Markdown-in-Jekyll.html">
-            Using Math/Logic Symbols in Markdown for Jekyll
-          </a>
-        </h3></li><li><span class="post-meta">May 19, 2021</span>
-        <h3>
-          <a class="post-link" href="/mathematics/2021/05/19/Logic.html">
-            Logic
-          </a>
-        </h3></li></ul>
+            <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
-    <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p></div>
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Kadane&#39;s Algorithm</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2021-05-25T00:00:00-04:00" itemprop="datePublished">May 25, 2021
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Determines the largest maximum contiguous subset of a set in O(n) time (brute force method is O(n^2) time).</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def maxSumSubArray(arr):
+  local_max = 0
+  global_max = 0
+
+  for int in arr:
+    local_max = max(int, int + local_max)
+    if (local_max &gt; global_max):
+      global_max = local_max
+  return global_max
+
+testArr = [-1,2,7,6,4,8,-9,2]
+maxSum = maxSumSubArray(testArr)
+print(maxSum)
+</code></pre></div></div>
+<p>Algorithm loops through the array once and compares the max between the current value in the array and the current value + previous local max value. Assigns that value to the local_max, and if it is larger than the current global_max value, replaces that.</p>
+
+  </div><a class="u-url" href="/algorithms/2021/05/25/Kadanes-Algorithm.html" hidden></a>
+</article>
 
         </div>
     </main><footer class="site-footer h-card">

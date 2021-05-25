@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-05-20T07:26:12-04:00</updated><id>/feed.xml</id><title type="html">TIL</title><subtitle>Today I Learned Blog</subtitle><entry><title type="html">Logic</title><link href="/mathematics/2021/05/19/Logic.html" rel="alternate" type="text/html" title="Logic" /><published>2021-05-19T00:00:00-04:00</published><updated>2021-05-19T00:00:00-04:00</updated><id>/mathematics/2021/05/19/Logic</id><content type="html" xml:base="/mathematics/2021/05/19/Logic.html">&lt;p&gt;Logical expressions evaluate to True (1) or False (0).&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-05-25T19:11:48-04:00</updated><id>/feed.xml</id><title type="html">TIL</title><subtitle>Today I Learned Blog</subtitle><entry><title type="html">Kadane’s Algorithm</title><link href="/algorithms/2021/05/25/Kadanes-Algorithm.html" rel="alternate" type="text/html" title="Kadane’s Algorithm" /><published>2021-05-25T00:00:00-04:00</published><updated>2021-05-25T00:00:00-04:00</updated><id>/algorithms/2021/05/25/Kadanes-Algorithm</id><content type="html" xml:base="/algorithms/2021/05/25/Kadanes-Algorithm.html">&lt;p&gt;Determines the largest maximum contiguous subset of a set in O(n) time (brute force method is O(n^2) time).&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def maxSumSubArray(arr):
+  local_max = 0
+  global_max = 0
+
+  for int in arr:
+    local_max = max(int, int + local_max)
+    if (local_max &amp;gt; global_max):
+      global_max = local_max
+  return global_max
+
+testArr = [-1,2,7,6,4,8,-9,2]
+maxSum = maxSumSubArray(testArr)
+print(maxSum)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Algorithm loops through the array once and compares the max between the current value in the array and the current value + previous local max value. Assigns that value to the local_max, and if it is larger than the current global_max value, replaces that.&lt;/p&gt;</content><author><name></name></author><category term="algorithms" /><summary type="html">Determines the largest maximum contiguous subset of a set in O(n) time (brute force method is O(n^2) time).</summary></entry><entry><title type="html">Logic</title><link href="/mathematics/2021/05/19/Logic.html" rel="alternate" type="text/html" title="Logic" /><published>2021-05-19T00:00:00-04:00</published><updated>2021-05-19T00:00:00-04:00</updated><id>/mathematics/2021/05/19/Logic</id><content type="html" xml:base="/mathematics/2021/05/19/Logic.html">&lt;p&gt;Logical expressions evaluate to True (1) or False (0).&lt;/p&gt;
 
 &lt;h4 id=&quot;logical-operators&quot;&gt;Logical Operators&lt;/h4&gt;
 &lt;ul&gt;
