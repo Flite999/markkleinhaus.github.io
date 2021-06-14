@@ -1,4 +1,137 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-05-30T20:35:57-04:00</updated><id>/feed.xml</id><title type="html">TIL</title><subtitle>Today I Learned Blog</subtitle><entry><title type="html">Merge Sort Recursion and Call Stack Analysis</title><link href="/algorithms/2021/05/30/mergesort.html" rel="alternate" type="text/html" title="Merge Sort Recursion and Call Stack Analysis" /><published>2021-05-30T00:00:00-04:00</published><updated>2021-05-30T00:00:00-04:00</updated><id>/algorithms/2021/05/30/mergesort</id><content type="html" xml:base="/algorithms/2021/05/30/mergesort.html">&lt;p&gt;Code taken from &lt;a href=&quot;https://towardsdatascience.com/introduction-to-recursion-and-merge-sort-2e143b1b7615&quot;&gt;towardsdatascience.com&lt;/a&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-06-13T21:02:49-04:00</updated><id>/feed.xml</id><title type="html">TIL</title><subtitle>Today I Learned Blog</subtitle><entry><title type="html">Implementing a binary search tree</title><link href="/algorithms/2021/06/09/binary-search-tree.html" rel="alternate" type="text/html" title="Implementing a binary search tree" /><published>2021-06-09T00:00:00-04:00</published><updated>2021-06-09T00:00:00-04:00</updated><id>/algorithms/2021/06/09/binary-search-tree</id><content type="html" xml:base="/algorithms/2021/06/09/binary-search-tree.html">&lt;p&gt;Python -&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Node:
+  def __init__(self, data):
+    self.data = data
+    self.right = None
+    self.left = None
+  
+  def __str__(self):
+    return str(self.data) # pretty print the Node object
+
+class BinaryTree:
+  def __init__(self):
+    self.root = None
+
+  def addNode(self, data):
+    if (self.root == None):
+      self.root = Node(data)
+
+    else:
+      current = self.root
+
+      while True:
+        if (data &amp;lt; current.data):
+          if current.left:
+            current = current.left
+          else:
+            current.left = Node(data)
+            break
+        elif (data &amp;gt; current.data):
+          if current.right:
+            current = current.right
+          else:
+            current.right = Node(data)
+            break
+        else:
+          break
+
+  def inOrderTraversal(self, node):
+    if node is not None:
+      self.inOrderTraversal(node.left)
+      print(node.data)
+      self.inOrderTraversal(node.right)
+
+vals = [1,6,8,3,6,9,8]
+tree = BinaryTree()
+for val in vals:
+  tree.addNode(val)
+
+tree.inOrderTraversal(tree.root)
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="algorithms" /><summary type="html">Python -</summary></entry><entry><title type="html">Implementing a heap structure</title><link href="/algorithms/2021/06/09/heap-structure.html" rel="alternate" type="text/html" title="Implementing a heap structure" /><published>2021-06-09T00:00:00-04:00</published><updated>2021-06-09T00:00:00-04:00</updated><id>/algorithms/2021/06/09/heap-structure</id><content type="html" xml:base="/algorithms/2021/06/09/heap-structure.html"></content><author><name></name></author><category term="algorithms" /><summary type="html"></summary></entry><entry><title type="html">Different Algorithm Solutions to the Common Elements problem</title><link href="/algorithms/2021/06/07/elements-in-both-lists-problem.html" rel="alternate" type="text/html" title="Different Algorithm Solutions to the Common Elements problem" /><published>2021-06-07T00:00:00-04:00</published><updated>2021-06-07T00:00:00-04:00</updated><id>/algorithms/2021/06/07/elements-in-both-lists-problem</id><content type="html" xml:base="/algorithms/2021/06/07/elements-in-both-lists-problem.html">&lt;p&gt;Take two arrays:&lt;/p&gt;
+
+&lt;p&gt;A = [5,2,8,9,4]
+B = [3,2,9,5]&lt;/p&gt;
+
+&lt;p&gt;How many elements exist in both lists? In this case, the answer is 3; 2,5,9 exist in both lists.&lt;/p&gt;
+
+&lt;p&gt;First approach - brute force, O(\(n^2\)) method. Iterate through A, and check if the element exists in B.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Main {
+  public static void main(String[] args) {
+    int[] arrA = new int[]{ 5,2,8,9,4 };
+    int[] arrB = new int[]{ 3,2,9,5 };
+    int result = 0;
+    result = bruteMethod(arrA, arrB);
+    System.out.println(result);
+  }
+
+  private static int bruteMethod(int[] first, int[] second) {
+    int commonNum = 0;
+    for (int i = 0; i &amp;lt; first.length; i++) {
+      for (int j = 0; j &amp;lt; second.length; j++) {
+        if (first[i] == second[j]) {
+          commonNum ++;
+        }
+      }
+    }
+    return commonNum;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;2nd approach - binary search tree&lt;/p&gt;
+
+&lt;p&gt;3rd approach - heap structure&lt;/p&gt;</content><author><name></name></author><category term="algorithms" /><summary type="html">Take two arrays:</summary></entry><entry><title type="html">Binary Search Study</title><link href="/algorithms/2021/06/01/binarysearch.html" rel="alternate" type="text/html" title="Binary Search Study" /><published>2021-06-01T00:00:00-04:00</published><updated>2021-06-01T00:00:00-04:00</updated><id>/algorithms/2021/06/01/binarysearch</id><content type="html" xml:base="/algorithms/2021/06/01/binarysearch.html">&lt;p&gt;Halves a SORTED list by starting the search in the middle, checking if the current location is less than x or equal to/greater than x, and then makes the next jump to the right or left of the list correspondingly.&lt;/p&gt;
+
+&lt;p&gt;Method 1 in Python:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def methodOne(arr, x):
+  a = 0
+  b = len(arr)-1
+
+  while (a &amp;lt;= b):
+    k = int((a + b) / 2)
+    if (arr[k] == x):
+      return k
+    
+    if (arr[k] &amp;gt; x ):
+      b = k - 1
+    else:
+      a = k + 1
+
+testArr = [1,2,3,4,5,6,7,8]
+arrLocation = methodOne(testArr, 5)
+print(arrLocation)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Method 2 in Java:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Main {
+  public static void main(String[] args) {
+    int[] testArr = new int[]{ 1,2,3,4,5,6,7 };
+    int testInt = 5;
+
+    String arrLocation = methodTwo(testArr, testInt);
+    System.out.println(arrLocation);
+  }
+
+  public static String methodTwo(int[] arr, int x) {
+    Integer k = 0;
+    int n = arr.length;
+    for (int b = n/2; b &amp;gt;= 1; b /= 2) {
+      while (k + b &amp;lt; n &amp;amp;&amp;amp; arr[k + b] &amp;lt;= x) {
+        k += b;
+      }
+      
+      if (arr[k] == x) {
+        return k.toString();
+      }
+    }
+    String err = &quot;not found&quot;;
+    return err;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="algorithms" /><summary type="html">Halves a SORTED list by starting the search in the middle, checking if the current location is less than x or equal to/greater than x, and then makes the next jump to the right or left of the list correspondingly.</summary></entry><entry><title type="html">Merge Sort Recursion and Call Stack Analysis</title><link href="/algorithms/2021/05/30/mergesort.html" rel="alternate" type="text/html" title="Merge Sort Recursion and Call Stack Analysis" /><published>2021-05-30T00:00:00-04:00</published><updated>2021-05-30T00:00:00-04:00</updated><id>/algorithms/2021/05/30/mergesort</id><content type="html" xml:base="/algorithms/2021/05/30/mergesort.html">&lt;p&gt;Code taken from &lt;a href=&quot;https://towardsdatascience.com/introduction-to-recursion-and-merge-sort-2e143b1b7615&quot;&gt;towardsdatascience.com&lt;/a&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def mergesort(arr):
     n = len(arr)
@@ -64,7 +197,31 @@ testArr = [-1,2,7,6,4,8,-9,2]
 maxSum = maxSumSubArray(testArr)
 print(maxSum)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Algorithm loops through the array once and compares the max between the current value in the array and the current value + previous local max value. Assigns that value to the local_max, and if it is larger than the current global_max value, replaces that.&lt;/p&gt;</content><author><name></name></author><category term="algorithms" /><summary type="html">Determines the largest maximum contiguous subset of a set in O(n) time (brute force method is O(n^2) time).</summary></entry><entry><title type="html">Logic</title><link href="/mathematics/2021/05/19/Logic.html" rel="alternate" type="text/html" title="Logic" /><published>2021-05-19T00:00:00-04:00</published><updated>2021-05-19T00:00:00-04:00</updated><id>/mathematics/2021/05/19/Logic</id><content type="html" xml:base="/mathematics/2021/05/19/Logic.html">&lt;p&gt;Logical expressions evaluate to True (1) or False (0).&lt;/p&gt;
+&lt;p&gt;Algorithm loops through the array once and compares the max between the current value in the array and the current value + previous local max value. Assigns that value to the local_max, and if it is larger than the current global_max value, replaces that.&lt;/p&gt;</content><author><name></name></author><category term="algorithms" /><summary type="html">Determines the largest maximum contiguous subset of a set in O(n) time (brute force method is O(n^2) time).</summary></entry><entry><title type="html">Using Math/Logic Symbols in Markdown for Jekyll</title><link href="/mathematics/2021/05/19/Math-Markdown-in-Jekyll.html" rel="alternate" type="text/html" title="Using Math/Logic Symbols in Markdown for Jekyll" /><published>2021-05-19T00:00:00-04:00</published><updated>2021-05-19T00:00:00-04:00</updated><id>/mathematics/2021/05/19/Math-Markdown-in-Jekyll</id><content type="html" xml:base="/mathematics/2021/05/19/Math-Markdown-in-Jekyll.html">&lt;p&gt;There is a myriad of approaches to this out on the internet - here’s what worked for me.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle info minima&lt;/code&gt; in terminal.&lt;/li&gt;
+  &lt;li&gt;Copy the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Path&lt;/code&gt; value and open that directory.&lt;/li&gt;
+  &lt;li&gt;Copy the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;default.html&lt;/code&gt; file under &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_layouts&lt;/code&gt; folder in that directory.&lt;/li&gt;
+  &lt;li&gt;Create a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_layouts&lt;/code&gt; directory in your Jekyll blog root.&lt;/li&gt;
+  &lt;li&gt;Paste the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;default.html&lt;/code&gt; file in your new &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_layouts&lt;/code&gt; directory.&lt;/li&gt;
+  &lt;li&gt;Paste this line right after the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;html&amp;gt;&lt;/code&gt; opening line:
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;script type=&quot;text/javascript&quot;
+ src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Save.&lt;/li&gt;
+  &lt;li&gt;Edit your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file, add this line to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;# Build settings&lt;/code&gt; block: 
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;markdown: kramdown&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem install kramdown&lt;/code&gt; in your terminal.&lt;/li&gt;
+  &lt;li&gt;Finally, in your post, add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;usemathjax: true&lt;/code&gt; to your post variables, and enclose mathematical/logic symbols and equations with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$$&lt;/code&gt; on both sides.&lt;/li&gt;
+  &lt;li&gt;Formatting resources:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://davidagler.com/teaching/logic/handouts/supplemental_material/MarkdownForSymbolicLogic.html&quot;&gt;MarkdownForSymbolicLogic&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.markdownguide.org/basic-syntax/&quot;&gt;Basic Markdown syntax&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://gist.github.com/LKS90/252ac41bd4a173be35b0&quot;&gt;Mathematical markdown cheatsheet&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content><author><name></name></author><category term="mathematics" /><summary type="html">There is a myriad of approaches to this out on the internet - here’s what worked for me.</summary></entry><entry><title type="html">Logic</title><link href="/mathematics/2021/05/19/Logic.html" rel="alternate" type="text/html" title="Logic" /><published>2021-05-19T00:00:00-04:00</published><updated>2021-05-19T00:00:00-04:00</updated><id>/mathematics/2021/05/19/Logic</id><content type="html" xml:base="/mathematics/2021/05/19/Logic.html">&lt;p&gt;Logical expressions evaluate to True (1) or False (0).&lt;/p&gt;
 
 &lt;h4 id=&quot;logical-operators&quot;&gt;Logical Operators&lt;/h4&gt;
 &lt;ul&gt;
@@ -109,28 +266,4 @@ print(maxSum)
       &lt;li&gt;For each element x in the set, there is an element y in the set, such that y &amp;lt; x&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="mathematics" /><summary type="html">Logical expressions evaluate to True (1) or False (0).</summary></entry><entry><title type="html">Using Math/Logic Symbols in Markdown for Jekyll</title><link href="/mathematics/2021/05/19/Math-Markdown-in-Jekyll.html" rel="alternate" type="text/html" title="Using Math/Logic Symbols in Markdown for Jekyll" /><published>2021-05-19T00:00:00-04:00</published><updated>2021-05-19T00:00:00-04:00</updated><id>/mathematics/2021/05/19/Math-Markdown-in-Jekyll</id><content type="html" xml:base="/mathematics/2021/05/19/Math-Markdown-in-Jekyll.html">&lt;p&gt;There is a myriad of approaches to this out on the internet - here’s what worked for me.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle info minima&lt;/code&gt; in terminal.&lt;/li&gt;
-  &lt;li&gt;Copy the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Path&lt;/code&gt; value and open that directory.&lt;/li&gt;
-  &lt;li&gt;Copy the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;default.html&lt;/code&gt; file under &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_layouts&lt;/code&gt; folder in that directory.&lt;/li&gt;
-  &lt;li&gt;Create a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_layouts&lt;/code&gt; directory in your Jekyll blog root.&lt;/li&gt;
-  &lt;li&gt;Paste the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;default.html&lt;/code&gt; file in your new &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_layouts&lt;/code&gt; directory.&lt;/li&gt;
-  &lt;li&gt;Paste this line right after the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;html&amp;gt;&lt;/code&gt; opening line:
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;script type=&quot;text/javascript&quot;
- src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&amp;gt;&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Save.&lt;/li&gt;
-  &lt;li&gt;Edit your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file, add this line to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;# Build settings&lt;/code&gt; block: 
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;markdown: kramdown&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem install kramdown&lt;/code&gt; in your terminal.&lt;/li&gt;
-  &lt;li&gt;Finally, in your post, add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;usemathjax: true&lt;/code&gt; to your post variables, and enclose mathematical/logic symbols and equations with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$$&lt;/code&gt; on both sides.&lt;/li&gt;
-  &lt;li&gt;Formatting resources:
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;http://davidagler.com/teaching/logic/handouts/supplemental_material/MarkdownForSymbolicLogic.html&quot;&gt;MarkdownForSymbolicLogic&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://www.markdownguide.org/basic-syntax/&quot;&gt;Basic Markdown syntax&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://gist.github.com/LKS90/252ac41bd4a173be35b0&quot;&gt;Mathematical markdown cheatsheet&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><category term="mathematics" /><summary type="html">There is a myriad of approaches to this out on the internet - here’s what worked for me.</summary></entry></feed>
+&lt;/ul&gt;</content><author><name></name></author><category term="mathematics" /><summary type="html">Logical expressions evaluate to True (1) or False (0).</summary></entry></feed>
