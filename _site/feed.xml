@@ -1,4 +1,87 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-06-13T21:02:49-04:00</updated><id>/feed.xml</id><title type="html">TIL</title><subtitle>Today I Learned Blog</subtitle><entry><title type="html">Implementing a binary search tree</title><link href="/algorithms/2021/06/09/binary-search-tree.html" rel="alternate" type="text/html" title="Implementing a binary search tree" /><published>2021-06-09T00:00:00-04:00</published><updated>2021-06-09T00:00:00-04:00</updated><id>/algorithms/2021/06/09/binary-search-tree</id><content type="html" xml:base="/algorithms/2021/06/09/binary-search-tree.html">&lt;p&gt;Python -&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-06-17T21:24:29-04:00</updated><id>/feed.xml</id><title type="html">TIL</title><subtitle>Today I Learned Blog</subtitle><entry><title type="html">More depth first search for a binary tree</title><link href="/algorithms/2021/06/15/binary-tree-dfs.html" rel="alternate" type="text/html" title="More depth first search for a binary tree" /><published>2021-06-15T00:00:00-04:00</published><updated>2021-06-15T00:00:00-04:00</updated><id>/algorithms/2021/06/15/binary-tree-dfs</id><content type="html" xml:base="/algorithms/2021/06/15/binary-tree-dfs.html">&lt;p&gt;Python -&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Node:
+  def __init__(self, data):
+    self.data = data
+    self.right = None
+    self.left = None
+  
+  def __str__(self):
+    return str(self.data) # pretty print the Node object
+
+class BinaryTree:
+  def __init__(self):
+    self.root = None
+
+  def addNode(self, data):
+    if (self.root == None):
+      self.root = Node(data)
+
+    else:
+      current = self.root
+
+      while True:
+        if (data &amp;lt; current.data):
+          if current.left:
+            current = current.left
+          else:
+            current.left = Node(data)
+            break
+        elif (data &amp;gt;= current.data):
+          if current.right:
+            current = current.right
+          else:
+            current.right = Node(data)
+            break
+        else:
+          break
+
+  def inOrderTraversal(self, node):
+    if node is not None:
+      self.inOrderTraversal(node.left)
+      print(node.data)
+      self.inOrderTraversal(node.right)
+  
+  def preOrderTraversal(self, node):
+    if node is not None:
+      print(node.data)
+      self.preOrderTraversal(node.left)
+      self.preOrderTraversal(node.right)
+  
+  def postOrderTraversal(self, node):
+    if node is not None:
+      self.postOrderTraversal(node.left)
+      self.postOrderTraversal(node.right)
+      print(node.data)
+     
+
+vals = [1,6,8,3,6,9,8]
+tree = BinaryTree()
+for val in vals:
+  tree.addNode(val)
+
+print(&quot;Depth First Search&quot;)
+print(&quot;-----&quot;)
+print(&quot;in order traversal:&quot;)
+tree.inOrderTraversal(tree.root)
+print(&quot;pre order traversal:&quot;)
+tree.preOrderTraversal(tree.root)
+print(&quot;post order traversal:&quot;)
+tree.postOrderTraversal(tree.root)
+
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="algorithms" /><summary type="html">Python -</summary></entry><entry><title type="html">Heap Me Plz</title><link href="/algorithms/2021/06/15/heap_me.html" rel="alternate" type="text/html" title="Heap Me Plz" /><published>2021-06-15T00:00:00-04:00</published><updated>2021-06-15T00:00:00-04:00</updated><id>/algorithms/2021/06/15/heap_me</id><content type="html" xml:base="/algorithms/2021/06/15/heap_me.html">&lt;p&gt;One of the most surprising properties of a heap data structure is the way the index relationships can be determined via simple algorithm.&lt;/p&gt;
+
+&lt;p&gt;If the heap is implemented as an array and visualized as a binary tree:&lt;/p&gt;
+
+&lt;p&gt;root: &lt;em&gt;i&lt;/em&gt; = 1&lt;/p&gt;
+
+&lt;p&gt;parent: &lt;em&gt;i&lt;/em&gt; = &lt;em&gt;i&lt;/em&gt;/2&lt;/p&gt;
+
+&lt;p&gt;left child: &lt;em&gt;i&lt;/em&gt; = 2&lt;em&gt;i&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;right child: &lt;em&gt;i&lt;/em&gt; = 2&lt;em&gt;i&lt;/em&gt; + 1&lt;/p&gt;</content><author><name></name></author><category term="algorithms" /><summary type="html">One of the most surprising properties of a heap data structure is the way the index relationships can be determined via simple algorithm.</summary></entry><entry><title type="html">Implementing a heap structure</title><link href="/algorithms/2021/06/09/heap-structure.html" rel="alternate" type="text/html" title="Implementing a heap structure" /><published>2021-06-09T00:00:00-04:00</published><updated>2021-06-09T00:00:00-04:00</updated><id>/algorithms/2021/06/09/heap-structure</id><content type="html" xml:base="/algorithms/2021/06/09/heap-structure.html"></content><author><name></name></author><category term="algorithms" /><summary type="html"></summary></entry><entry><title type="html">Implementing a binary tree</title><link href="/algorithms/2021/06/09/binary-tree.html" rel="alternate" type="text/html" title="Implementing a binary tree" /><published>2021-06-09T00:00:00-04:00</published><updated>2021-06-09T00:00:00-04:00</updated><id>/algorithms/2021/06/09/binary-tree</id><content type="html" xml:base="/algorithms/2021/06/09/binary-tree.html">&lt;p&gt;Python -&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Node:
   def __init__(self, data):
@@ -49,7 +132,7 @@ for val in vals:
 
 tree.inOrderTraversal(tree.root)
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="algorithms" /><summary type="html">Python -</summary></entry><entry><title type="html">Implementing a heap structure</title><link href="/algorithms/2021/06/09/heap-structure.html" rel="alternate" type="text/html" title="Implementing a heap structure" /><published>2021-06-09T00:00:00-04:00</published><updated>2021-06-09T00:00:00-04:00</updated><id>/algorithms/2021/06/09/heap-structure</id><content type="html" xml:base="/algorithms/2021/06/09/heap-structure.html"></content><author><name></name></author><category term="algorithms" /><summary type="html"></summary></entry><entry><title type="html">Different Algorithm Solutions to the Common Elements problem</title><link href="/algorithms/2021/06/07/elements-in-both-lists-problem.html" rel="alternate" type="text/html" title="Different Algorithm Solutions to the Common Elements problem" /><published>2021-06-07T00:00:00-04:00</published><updated>2021-06-07T00:00:00-04:00</updated><id>/algorithms/2021/06/07/elements-in-both-lists-problem</id><content type="html" xml:base="/algorithms/2021/06/07/elements-in-both-lists-problem.html">&lt;p&gt;Take two arrays:&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="algorithms" /><summary type="html">Python -</summary></entry><entry><title type="html">Different Algorithm Solutions to the Common Elements problem</title><link href="/algorithms/2021/06/07/elements-in-both-lists-problem.html" rel="alternate" type="text/html" title="Different Algorithm Solutions to the Common Elements problem" /><published>2021-06-07T00:00:00-04:00</published><updated>2021-06-07T00:00:00-04:00</updated><id>/algorithms/2021/06/07/elements-in-both-lists-problem</id><content type="html" xml:base="/algorithms/2021/06/07/elements-in-both-lists-problem.html">&lt;p&gt;Take two arrays:&lt;/p&gt;
 
 &lt;p&gt;A = [5,2,8,9,4]
 B = [3,2,9,5]&lt;/p&gt;

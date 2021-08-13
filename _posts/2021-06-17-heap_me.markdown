@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "Heap Me Plz"
+date:   2021-06-15
+categories: algorithms
+---
+
+One of the most surprising properties of a heap data structure is the way the index relationships can be determined via simple algorithm.
+
+If the heap is implemented as an array and visualized as a binary tree:
+
+root: _i_ = 1
+
+parent: _i_ = _i_/2
+
+left child: _i_ = 2_i_
+
+right child: _i_ = 2_i_ + 1

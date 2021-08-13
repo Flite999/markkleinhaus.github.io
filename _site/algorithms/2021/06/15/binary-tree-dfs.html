@@ -3,21 +3,21 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Implementing a binary search tree | TIL</title>
+<title>More depth first search for a binary tree | TIL</title>
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="Implementing a binary search tree" />
+<meta property="og:title" content="More depth first search for a binary tree" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Python -" />
 <meta property="og:description" content="Python -" />
-<link rel="canonical" href="/algorithms/2021/06/09/binary-search-tree.html" />
-<meta property="og:url" content="/algorithms/2021/06/09/binary-search-tree.html" />
+<link rel="canonical" href="/algorithms/2021/06/15/binary-tree-dfs.html" />
+<meta property="og:url" content="/algorithms/2021/06/15/binary-tree-dfs.html" />
 <meta property="og:site_name" content="TIL" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-06-09T00:00:00-04:00" />
+<meta property="article:published_time" content="2021-06-15T00:00:00-04:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Implementing a binary search tree" />
+<meta property="twitter:title" content="More depth first search for a binary tree" />
 <script type="application/ld+json">
-{"mainEntityOfPage":{"@type":"WebPage","@id":"/algorithms/2021/06/09/binary-search-tree.html"},"url":"/algorithms/2021/06/09/binary-search-tree.html","headline":"Implementing a binary search tree","description":"Python -","dateModified":"2021-06-09T00:00:00-04:00","datePublished":"2021-06-09T00:00:00-04:00","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"mainEntityOfPage":{"@type":"WebPage","@id":"/algorithms/2021/06/15/binary-tree-dfs.html"},"url":"/algorithms/2021/06/15/binary-tree-dfs.html","headline":"More depth first search for a binary tree","description":"Python -","dateModified":"2021-06-15T00:00:00-04:00","datePublished":"2021-06-15T00:00:00-04:00","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="TIL" /></head>
 <body><header class="site-header" role="banner">
@@ -40,9 +40,9 @@
             <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Implementing a binary search tree</h1>
+    <h1 class="post-title p-name" itemprop="name headline">More depth first search for a binary tree</h1>
     <p class="post-meta">
-      <time class="dt-published" datetime="2021-06-09T00:00:00-04:00" itemprop="datePublished">Jun 9, 2021
+      <time class="dt-published" datetime="2021-06-15T00:00:00-04:00" itemprop="datePublished">Jun 15, 2021
       </time></p>
   </header>
 
@@ -76,7 +76,7 @@ class BinaryTree:
           else:
             current.left = Node(data)
             break
-        elif (data &gt; current.data):
+        elif (data &gt;= current.data):
           if current.right:
             current = current.right
           else:
@@ -90,17 +90,39 @@ class BinaryTree:
       self.inOrderTraversal(node.left)
       print(node.data)
       self.inOrderTraversal(node.right)
+  
+  def preOrderTraversal(self, node):
+    if node is not None:
+      print(node.data)
+      self.preOrderTraversal(node.left)
+      self.preOrderTraversal(node.right)
+  
+  def postOrderTraversal(self, node):
+    if node is not None:
+      self.postOrderTraversal(node.left)
+      self.postOrderTraversal(node.right)
+      print(node.data)
+     
 
 vals = [1,6,8,3,6,9,8]
 tree = BinaryTree()
 for val in vals:
   tree.addNode(val)
 
+print("Depth First Search")
+print("-----")
+print("in order traversal:")
 tree.inOrderTraversal(tree.root)
+print("pre order traversal:")
+tree.preOrderTraversal(tree.root)
+print("post order traversal:")
+tree.postOrderTraversal(tree.root)
+
+
 
 </code></pre></div></div>
 
-  </div><a class="u-url" href="/algorithms/2021/06/09/binary-search-tree.html" hidden></a>
+  </div><a class="u-url" href="/algorithms/2021/06/15/binary-tree-dfs.html" hidden></a>
 </article>
 
         </div>
