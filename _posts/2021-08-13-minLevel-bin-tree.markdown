@@ -25,6 +25,7 @@ def minDepth(root):
 but this fails on the edge case where the input is a linked list like so:
 [2,null,3,null,4,null,5,null,6]
 
+```
 2
   \
     3
@@ -34,6 +35,7 @@ but this fails on the edge case where the input is a linked list like so:
             5
               \
                 6
+```
 
 no left child from the root.
 
